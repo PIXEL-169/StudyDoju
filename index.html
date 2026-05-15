@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="Homepage">
+
+    <div class="center">
+        <div class="header">
+            <h1 id="h1">StudyDojo</h1>
+            <p id="p1">A Timer app to help U study</p>
+        </div>
+
+        <div class="tab">
+            <button class="Focus">Focus</button>
+            <button class="Shortbreak">Short Break</button>
+            <button class="Longbreak">Long Break</button>
+        </div>
+        <div class="gifwrapper">
+            <div class="chill">
+                <button class="Previous" onclick="changegif(-1)">
+                    <img src="previous.png" width="30px">
+                </button>
+                <h1 id="time">45:00</h1>
+                <button class="next" onclick="changegif(1)">
+                    <img src="next.png" width="30px">
+                </button>
+            </div>
+
+        </div>
+        <div class="tab2">
+            <button class="Start">Start</button>
+            <button class="Pause">Pause</button>
+            <button class="Reset">Reset</button>
+        </div>
+    </div>
+
+
+    </div>
+    <div class="TODO">
+        <h2 class="todo">To Do list</h2>
+        <hr>
+        <div class="addtask">
+            <textarea id="taskinput" placeholder="Add task "></textarea>
+            <button id="add" onclick="addtask()">Add</button>
+        </div>
+        <ul id="tasklist">
+        </ul>
+    </div>
+
+    <div class="player">
+        <div class="wrapper">
+            <div class="details">
+                <div class="nowplaying">PLAYING x OF y</div>
+                <div class="name">Track name</div>
+            </div>
+            <div class="mainrow">
+                <div class="leftside">
+                    <div class="slidercontainer">
+                        <div class="current_time">00:00</div>
+                        <input type="range" min="1" max="100" value="0" class="slider" onchange="seekTo()">
+                        <div class="totaltime">00:00</div>
+                    </div>
+
+                    <div class="buttons">
+                        <div class="prevtracker" onclick="prevtrack()">
+                            <img src="back.png" class="prevtrack"></img>
+                        </div>
+                        <div class="playpause" onclick="playpausetrack()">
+                            <img src="play.png" class="play-pause"></img>
+                        </div>
+                        <div class="nexttrack" onclick="nexttrack()">
+                            <img src="next-(1).png" class="next-track" title="random"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="slidercontainer2">
+                    <img src="volume-down.png" class="volumedown"></img>
+                    <input type="range" min="1" max="100" value="99" class="volumeslider" onchange="setvolume()">
+                    <img src="volume.png" class="volumeup"></img>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">
+        <h2 id="alarm">⏰ Session Ended!</h2>
+        <p id="alarm2">Time for a Break</p>
+        <button id="alarm3" onclick="closenotification()">OK</button>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
